@@ -5,7 +5,7 @@ export const carsData = [
         type: 'Gt-Line',
         year: 2020,
         km:3.133,
-        price:1123123
+        price:"23,422"
     },
     {
         image: 'https://www.transparentpng.com/thumb/car-png/photos-png-clipart-car-4.png',
@@ -13,14 +13,14 @@ export const carsData = [
         type: 'DB11',
         year: 2018,
         km:10.103,
-        price:1123123
+        price:"35,323"
     },
     {
         image: 'https://www.transparentpng.com/thumb/lamborghini-aventador/jh3zxq-lamborghini-aventador-hd-photo-png.png',
         name: 'Lamborghini',
         type: 'Aventador',
         year: 2018,
-        price:1123123,
+        price:"245,500",
         km:4.133
     },
     {
@@ -29,6 +29,6 @@ export const carsData = [
         type: 'I8',
         year: 2020,
         km:30.133,
-        price:1123123
+        price:"100,500"
     }
 ]
