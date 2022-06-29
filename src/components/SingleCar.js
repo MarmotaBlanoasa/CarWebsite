@@ -1,17 +1,16 @@
 import React from 'react';
 import Footer from "./Footer";
 
-function SingleCar({price,image, name}) {
+function SingleCar({...car}) {
     return (
-        <div>
+        <div className='mt-20'>
             <div className='flex'>
-                <div>
-                    <h1 className='text-4xl mr-14'>${price}</h1>
+                <div className="-mt-8">
+                    <h1 className='text-4xl mr-14'>${car.price}</h1>
                     <p className='text-secondary text-sm mt-1'>Cluj Napoca, RO</p>
                 </div>
-                <img className="" src={image} alt={name} />
+                <img className="" src={car.image} alt={car.name} />
             </div>
-            <Footer/>
         </div>
 
     );

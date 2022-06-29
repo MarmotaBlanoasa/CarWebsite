@@ -4,6 +4,7 @@ import SingleCar from "./SingleCar";
 import {FaArrowDown, FaArrowUp} from "react-icons/fa";
 import {useState} from "react";
 import {BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from "react-icons/bs";
+import Footer from "./Footer";
 function MainSlider() {
     const [current, setCurrent]  = useState(0)
     const [hover1, setHover1] = useState(false)
@@ -17,35 +18,44 @@ function MainSlider() {
         setCurrent(current === 0 ? length-1 : current-1);
     }
     return (
-        <div className="relative 100vh flex justify-center align-middle items-center">
+        <div>
+            <div className="relative 100vh flex justify-center align-middle items-center">
 
-            {carsData.map((car, index)=>{
+                {carsData.map((car, index)=>{
+                    return(
+                        <div key={index} className={index=== current? 'mt-20' : 'hidden transition duration-1000 ease-linear'}>
+                            <SingleCar {...car} index = {index} />
+                        </div>
+                    );
+                })}
+                <div className="flex flex-col items-center ml-36 mt-36 ">
+                    <div
+                        onMouseOver={()=>{setHover1(true)}}
+                        onMouseOut={()=>{setHover1(false)}}
+                        className="text-2xl"
+                    >
+                        {hover1? <BsFillArrowUpCircleFill className="text-2xl" onClick={prevSlide}/>:<FaArrowUp onClick={prevSlide}/>}
+                    </div>
+                    <p className='pt-14 pb-14 text-2xl'>
+                        {current + 1}
+                    </p>
+                    <div onMouseOver={()=>{setHover2(true)}}
+                         onMouseOut={()=>{setHover2(false)}}
+                         className="text-2xl"
+                    >
+                        {hover2? <BsFillArrowDownCircleFill className="text-2xl" onClick={nextSlide}/>:<FaArrowDown onClick={nextSlide}/>}
+                    </div>
+                </div>
+            </div>
+            {carsData.map((info, index)=>{
                 return(
-                    <div key={index} className={index=== current? 'mt-20' : 'hidden transition duration-1000 ease-linear'}>
-                    <SingleCar {...car} index = {index} />
+                    <div key={index} className={index=== current? 'mt-8' : 'hidden transition duration-1000 ease-linear'}>
+                        <Footer {...info} index = {index} />
                     </div>
                 );
             })}
-            <div className="flex flex-col items-center ml-28 ">
-                <div
-                    onMouseOver={()=>{setHover1(true)}}
-                    onMouseOut={()=>{setHover1(false)}}
-                    className="text-2xl"
-                >
-                    {hover1? <BsFillArrowUpCircleFill className="text-4xl" onClick={prevSlide}/>:<FaArrowUp onClick={prevSlide}/>}
-                </div>
-                <p className='p-8 text-2xl'>
-                    {current + 1}
-                </p>
-                <div onMouseOver={()=>{setHover2(true)}}
-                     onMouseOut={()=>{setHover2(false)}}
-                     className="text-2xl"
-                >
-                    {hover2? <BsFillArrowDownCircleFill className="text-4xl" onClick={nextSlide}/>:<FaArrowDown onClick={nextSlide}/>}
-                </div>
-
-            </div>
         </div>
+
     );
 }
 
