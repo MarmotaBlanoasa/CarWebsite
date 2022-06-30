@@ -36,7 +36,7 @@ function MainSlider() {
                     >
                         {hover1? <BsFillArrowUpCircleFill className="text-2xl" onClick={prevSlide}/>:<FaArrowUp onClick={prevSlide}/>}
                     </div>
-                    <p className='pt-14 pb-14 text-2xl'>
+                    <p className='pt-14 pb-14 text-2xl text_base'>
                         {current + 1}
                     </p>
                     <div onMouseOver={()=>{setHover2(true)}}

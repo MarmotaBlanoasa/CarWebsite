@@ -1,7 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
 @font-face {
     font-family: Poppins-regular;
-    font-weight: 400;
+    font-weight: 500;
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+}
+@font-face {
+    font-family: Poppins;
+    font-weight: 600;
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 }
 @font-face {
     font-family: Poppins-bold;
@@ -11,15 +22,13 @@
 body{
     background: #E9ECEF;
 }
-p{
-    font-family: 'Poppins-regular', sans-serif;
-}
-h1{
+.bold_text{
     font-family: 'Poppins-bold', sans-serif;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind screens;
-
+.regular_text{
+    font-family: 'Poppins-regular', sans-serif;
+}
+.text_base{
+    font-family: "Poppins", sans-serif;
+}
 
